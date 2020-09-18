@@ -1,4 +1,3 @@
-console.log("hello frm the adapter file")
 const PLANETS_URL = `${BASE_URL}/planets`;
 
 const adapter = {

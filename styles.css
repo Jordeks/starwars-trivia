@@ -65,49 +65,6 @@ body {
     border: gray solid 1px;
     color: gray;
   }
-
-  
-
-  /* .modal {
-    display: none;
-    position: fixed; 
-    padding-top: 50px;
-    left: 0; 
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .modal-content {
-    position: relative; 
-    background-color: white;
-    padding: 20px; 
-    margin: auto; 
-    width: 75%;  
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    color: black
-  }
-  .close-btn {
-    float: right; 
-    color: lightgray; 
-    font-size: 24px;  
-    font-weight: bold;
-  }
-  .close-btn:hover {
-    color: darkgray;
-  }
-  @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-  }
-  @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  } */
   
   .container {
     padding: 1rem;
@@ -146,73 +103,11 @@ body {
     height: 2rem;
     width: 60%;
     font-size: 18px;
-    font-family: monospace;
+    font-family: 'Signika', sans-serif;
+    background-color: rgb(170, 150, 111);
     margin: 3px;
-    color: black;
+    color: white;
   }
-
-  /* lskjadfasjkdflkajsd;flkjasdlkfjasd;lkfjasldkjfal;skdjf */
-  /* alkjsdflakjsdhflkajsdhfklajshflkjashdfkjhasdkfjhaskdfjhaslkdfj */
-
-  /* {box-sizing: border-box;} */
-
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
-
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
-
-/* Add styles to the form container */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
 
 .character-button.delete {
   background-color: rgb(104, 5, 5);
@@ -260,12 +155,31 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  background-image: url('https://images.unsplash.com/photo-1546561892-65bf811416b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
-  background-size: contain;
-  display: flex;
-  justify-content: space-between; 
-  align-content: space-between;
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/e46a5b64931151.5ae243a38ada6.jpg');
+  background-size: cover;
+  display: block;
+  text-align: center;
+}
 
+.modal-form {
+  display: inline-block;
+  margin: auto;
+}
+
+.submit-button {
+  background-color: gray;
+  border: none;
+  border-radius: 5px;
+  height: 3rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+.submit-button:hover {
+  background-color: whitesmoke;
+  border: gray solid 1px;
+  color: gray;
 }
 
 /* The Close Button */

@@ -21,31 +21,6 @@ function addPlanetButton(){
     app.appendChild(addButton)
   }
 
-function getModal(){
-    const modalContent = document.querySelector(".modal-content")
-    const form = document.createElement("form")
-    form.innerHTML = `
-    <input type="text" name="name" placeholder="Name..."class="input-text"/>
-    <input type="text" name="climate" placeholder="Climate..."class="input-text"/>
-    <input type="text" name="planet_image" placeholder="Planet URL..."class="input-text"/>
-    <input type="text" name="env_image" placeholder="Planet Environment URL..."class="input-text"/>
-    <input type="text" name="population" placeholder="Population..."class="input-text"/>
-    <input type="submit" value="Submit">
-    <br>`
-    modal.style.display = "block"
-    modalContent.appendChild(form)
-    form.addEventListener("submit", (e) => {
-        e.preventDefault()
-        adapter.addPlanet(e.target)
-        .then(data => {
-            renderPlanet(data)
-            // console.log(data)
-            modal.style.display = "none";
-            modal.querySelector("form").remove()
-        })
-    })
-}
-
 const planetsBtn = document.querySelector(".planets-button")
 planetsBtn.addEventListener("click", () => {
     app.innerHTML = ""
@@ -94,5 +69,31 @@ function addPlanetDivContent(div, planet){
     })
     div.append(ul, climateDiv)
 }
+
+function getModal(){
+    const modalContent = document.querySelector(".modal-content")
+    const form = document.createElement("form")
+    form.className = "modal-form"
+    form.innerHTML = `
+    <input type="text" name="name" placeholder="Name..."class="input-text"/>
+    <input type="text" name="climate" placeholder="Climate..."class="input-text"/>
+    <input type="text" name="planet_image" placeholder="Planet URL..."class="input-text"/>
+    <input type="text" name="env_image" placeholder="Planet Environment URL..."class="input-text"/>
+    <input type="text" name="population" placeholder="Population..."class="input-text"/>
+    <div><input class="submit-button" type="submit" value="Submit"></div>
+    <br>`
+    modal.style.display = "block"
+    modalContent.appendChild(form)
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        adapter.addPlanet(e.target)
+        .then(data => {
+            renderPlanet(data)
+            modal.style.display = "none";
+            modal.querySelector("form").remove()
+        })
+    })
+}
+
 
 

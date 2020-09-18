@@ -38,7 +38,7 @@ addButton.addEventListener("click", () => {
       <input type="text" name="species" placeholder="Species..."class="input-text"/>
       <input type="text" name="planetName" placeholder="Home Planet..."class="input-text"/>
       <input type="text" name="avatar" placeholder="Image URL..."class="input-text"/>
-      <input type="submit" value="Submit">
+      <div><input class="submit-button" type="submit" value="Submit"></div>
       <br>`
     modalContent.appendChild(form)
     modal.style.display = "block"
