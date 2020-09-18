@@ -1,7 +1,8 @@
 /* PLANET PLAN
     -include array of charaters with links to show their individual info? as a popup?
+        -may NOTE need fetch, just do planet.character.name maybe
         -mini foto, name and species
-    -event Listeners for edit and delete buttons
+    -event Listeners for edit
     -On character's card planet will mouseover to a popup with planet info
     -change addPlanetDivContent to be built by js as opposed to innerHTML cause it's ugly as shit
 
@@ -14,8 +15,36 @@ function addPlanetButton(){
     const addButton = document.createElement("button")
     addButton.className = "add-planet"
     addButton.innerText = "Be God. Make a Planet."
+    addButton.addEventListener("click", () => {
+        getModal();
+    })
     app.appendChild(addButton)
   }
+
+function getModal(){
+    const modalContent = document.querySelector(".modal-content")
+    const form = document.createElement("form")
+    form.innerHTML = `
+    <input type="text" name="name" placeholder="Name..."class="input-text"/>
+    <input type="text" name="climate" placeholder="Climate..."class="input-text"/>
+    <input type="text" name="planet_image" placeholder="Planet URL..."class="input-text"/>
+    <input type="text" name="env_image" placeholder="Planet Environment URL..."class="input-text"/>
+    <input type="text" name="population" placeholder="Population..."class="input-text"/>
+    <input type="submit" value="Submit">
+    <br>`
+    modal.style.display = "block"
+    modalContent.appendChild(form)
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        adapter.addPlanet(e.target)
+        .then(data => {
+            renderPlanet(data)
+            // console.log(data)
+            modal.style.display = "none";
+            modal.querySelector("form").remove()
+        })
+    })
+}
 
 const planetsBtn = document.querySelector(".planets-button")
 planetsBtn.addEventListener("click", () => {
@@ -65,4 +94,5 @@ function addPlanetDivContent(div, planet){
     })
     div.append(ul, climateDiv)
 }
+
 
