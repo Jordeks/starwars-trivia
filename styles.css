@@ -11,8 +11,8 @@ body {
   border: grey solid 1px;
   border-radius: 5px; 
   padding: 1rem;
-  width: 15rem;
-  height: 34rem;
+  width: 17rem;
+  height: auto;
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 3px 4px gray;
@@ -42,6 +42,19 @@ body {
     width: 15rem;
     border: 1px solid whitesmoke;
     border-radius: 5px;
+  }
+
+  .character-films-ul {
+    font-size: 23px; 
+    color: whitesmoke;
+    text-align: left;
+    list-style: none;
+  }
+
+  .character-films-li {
+    font-size: 20px; 
+    color: whitesmoke;
+    text-align: left;
   }
 
   button {
@@ -242,7 +255,6 @@ body {
   font-size: 20px; 
   color: whitesmoke;
   text-align: center;
-  
 }
 
 .planet-climate {

@@ -114,9 +114,11 @@ function addCharacterDivContent(div, character){
     <p class="species-p">Species: ${character.species}</p>
     `
   const filmUl = document.createElement("ul")
-  // console.log(character.films)
+  filmUl.innerText = "Films:"
+  filmUl.className = "character-films-ul"
   character.films.forEach( film => {
     let li = document.createElement("li")
+    li.className = "character-films-li"
     li.innerText = film.title
     filmUl.appendChild(li)
   })
