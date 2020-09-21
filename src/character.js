@@ -113,6 +113,14 @@ function addCharacterDivContent(div, character){
     <p class="home-planet">Home Planet: ${character.planet.name}</p>
     <p class="species-p">Species: ${character.species}</p>
     `
+  const filmUl = document.createElement("ul")
+  // console.log(character.films)
+  character.films.forEach( film => {
+    let li = document.createElement("li")
+    li.innerText = film.title
+    filmUl.appendChild(li)
+  })
+  div.append(filmUl)
   const editButton = document.createElement("div")
   editButton.className = "edit character-button"
   editButton.innerText = `Edit ${character.name}'s information.`

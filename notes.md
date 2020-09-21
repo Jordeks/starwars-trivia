@@ -4,6 +4,11 @@
 
 -Models and Pages to Implement
     -Films: has_many :characters through: :film_characters
+      -poster
+      -title
+      -release_date
+      -director
+     
     -Starships
     -Species
     -Vehicles
