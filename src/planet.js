@@ -1,6 +1,6 @@
 /* PLANET PLAN
     -include array of charaters with links to show their individual info? as a popup?
-        -may NOTE need fetch, just do planet.character.name maybe
+        -may NOT need fetch, just do planet.character.name maybe
         -mini foto, name and species
     -event Listeners for edit
     -On character's card planet will mouseover to a popup with planet info
@@ -29,7 +29,8 @@ planetsBtn.addEventListener("click", () => {
 })
 
 function init(){
-    adapter.getAllPlanets().then(renderPlanets)
+    adapter.getAllPlanets()
+    .then(renderPlanets)
 }
 
 function renderPlanets(planets){

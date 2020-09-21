@@ -2,9 +2,7 @@
   -move to character.js
   -refactor with adaptor pattern and class syntax
   -On character's card planet will mouseover to a popup with planet info
-  -JORDAN go through line by line (in new repo???) to figure out where we went wrong with our patch rerendering
-    -get all that extra code out of master branch
-  MUST FIX: when a user makes a new character they must either select a planet from a dropdown OR make an entirely neeew planet with accepts nested attributes for ew
+  - make an entirely neeew planet with accepts nested attributes for new
 
 */
 const BASE_URL = "http://localhost:3000";
@@ -31,14 +29,39 @@ charactersButton.addEventListener("click", () => {
 addButton.addEventListener("click", () => {
   const modalContent = document.querySelector(".modal-content")
     const form = document.createElement("form")
+    adapter.getAllPlanets()
+    .then(planets => {
+      planets.forEach( planet =>{
+        let option = document.createElement("option")
+        option.textContent = planet.name
+        option.value = planet.name
+        select.appendChild(option)
+      })
+    })
+
     form.innerHTML = `
       <input type="text" name="name" placeholder="Name..."class="input-text"/>
-      <input type="text" name="species" placeholder="Species..."class="input-text"/>
-      <input type="text" name="planetName" placeholder="Home Planet..."class="input-text"/>
+      <input type="text" name="species" placeholder="Species..."class="input-text"/>`
+
+     const planetDropdown = document.createElement('div')
+
+    const dropdownLabel = document.createElement('label')
+    dropdownLabel.innerText = "Choose a Planet:"
+    const select = document.createElement('select')
+    select.id = "select-planet"
+    select.name = "planetName"
+     
+    planetDropdown.append(dropdownLabel, select)
+
+    const avatarSubmitDiv = document.createElement('div')
+     avatarSubmitDiv.className = "avatar-submit-div"
+     avatarSubmitDiv.innerHTML =
+      `
       <input type="text" name="avatar" placeholder="Image URL..."class="input-text"/>
       <div><input class="submit-button" type="submit" value="Submit"></div>
       <br>`
     modalContent.appendChild(form)
+    form.append(planetDropdown, avatarSubmitDiv)
     modal.style.display = "block"
     form.addEventListener("submit", (e) => {
       e.preventDefault()

@@ -1,3 +1,7 @@
+-add validations
+-handle catch for fetch error
+-handle validation errors
+
 -Models and Pages to Implement
     -Films
     -Starships
