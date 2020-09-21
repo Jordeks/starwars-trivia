@@ -2,13 +2,8 @@
     -include array of charaters with links to show their individual info? as a popup?
         -may NOT need fetch, just do planet.character.name maybe
         -mini foto, name and species
-    -event Listeners for edit
-    -On character's card planet will mouseover to a popup with planet info
     -change addPlanetDivContent to be built by js as opposed to innerHTML cause it's ugly as shit
-
     -refactor to class syntax
-
-MUST FIX: when a user makes a new character they must either select a planet from a dropdown OR make an entirely neeew planet with accepts nested attributes for ew
 */
 
 function addPlanetButton(){

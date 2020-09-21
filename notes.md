@@ -3,10 +3,11 @@
 -handle validation errors
 
 -Models and Pages to Implement
-    -Films
+    -Films: has_many :characters through: :film_characters
     -Starships
     -Species
     -Vehicles
+    -Users ? 
 
 MAJOR REFACTOR LONG TERM:
 -Films with opening crawl from swapi
@@ -16,3 +17,5 @@ MAJOR REFACTOR LONG TERM:
     -then that is sent to SWAPI which is then found or created by in our backend
     -then forever saved in our db
 -on edit people can add descriptions/bios of characters
+-TRIVIA (cause it's the name of the app dumbasses)
+  - users can full CRUD on Trivia questions
