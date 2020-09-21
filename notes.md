@@ -4,10 +4,7 @@
 
 -Models and Pages to Implement
     -Films: has_many :characters through: :film_characters
-      -poster
-      -title
-      -release_date
-      -director
+      -youtube api to embed trailer???
      
     -Starships
     -Species

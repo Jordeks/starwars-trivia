@@ -1,6 +1,12 @@
 const PLANETS_URL = `${BASE_URL}/planets`;
+const FILMS_URL = `${BASE_URL}/films`;
 
 const adapter = {
+  getAllFilms: function(){
+    return fetch(FILMS_URL)
+    .then(res => res.json())
+  },
+
   getAllPlanets: function(){
     return fetch(PLANETS_URL)
     .then(res => res.json())
