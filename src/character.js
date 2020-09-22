@@ -131,12 +131,21 @@ function renderCharacter(character){
 
 function addCharacterDivContent(div, character){
   div.classList.add("character-card")
+  // <img class="character-avatar" src="${character.avatar}" alt=${character.name}/>
   div.innerHTML = `
-    <img class="character-avatar" src="${character.avatar}" alt=${character.name}/>
     <p class="character-name"><strong>${character.name}</strong></p>
-    <p class="home-planet">Home Planet: ${character.planet.name}</p>
+    <p class="home-planet" id="planet-${character.planet_id}">Home Planet: ${character.planet.name}</p>
     <p class="species-p">Species: ${character.species}</p>
     `
+  const charAvatar = document.createElement("img")
+  charAvatar.className = "character-avatar"
+  charAvatar.src = `${character.avatar}`
+  charAvatar.alt = `${character.name}`
+  charAvatar.addEventListener("click", ()=> {
+    alert(`Hellos from ${character.name}'s avatar`)
+  })
+  //GAME PLAN refactor all innerHTML to manually being built out
+  //that way we can DIRECTLY add an eventListener
   const filmUl = document.createElement("ul")
   filmUl.innerText = "Films:"
   filmUl.className = "character-films-ul"
@@ -146,7 +155,7 @@ function addCharacterDivContent(div, character){
     li.innerText = film.title
     filmUl.appendChild(li)
   })
-  div.append(filmUl)
+  div.append(charAvatar, filmUl)
   const editButton = document.createElement("div")
   editButton.className = "edit character-button"
   editButton.innerText = `Edit ${character.name}'s information.`
