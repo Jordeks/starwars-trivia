@@ -34,6 +34,15 @@ addButton.addEventListener("click", () => {
       })
     })
 
+    adapter.getAllFilms()
+    .then(films => {
+      films.forEach( film => {
+        filmsCheck.innerHTML += `
+    <input class="checks" type="checkbox" id="${film.id}" name="${film.title}">
+    <label>${film.title}</label>`
+      })
+    })
+
     form.innerHTML = `
       <input type="text" name="name" placeholder="Name..."class="input-text"/>
       <input type="text" name="species" placeholder="Species..."class="input-text"/>`
@@ -48,6 +57,11 @@ addButton.addEventListener("click", () => {
      
     planetDropdown.append(dropdownLabel, select)
 
+    const filmsCheck = document.createElement('div') 
+    const checkboxLabel = document.createElement('label')
+    checkboxLabel.innerText = "Select Films:"
+    filmsCheck.append(checkboxLabel)
+
     const avatarSubmitDiv = document.createElement('div')
      avatarSubmitDiv.className = "avatar-submit-div"
      avatarSubmitDiv.innerHTML =
@@ -56,16 +70,23 @@ addButton.addEventListener("click", () => {
       <div><input class="submit-button" type="submit" value="Submit"></div>
       <br>`
     modalContent.appendChild(form)
-    form.append(planetDropdown, avatarSubmitDiv)
+    form.append(planetDropdown, filmsCheck, avatarSubmitDiv)
     modal.style.display = "block"
     
     form.addEventListener("submit", (e) => {
+      // debugger
       e.preventDefault()
+      const checks = Array.from(e.target.querySelectorAll(".checks"))
+      const checkedFilms = checks.filter( film => film.checked )
+      let filmIdsArray = checkedFilms.map( film => parseInt(film.id))
+      console.log(filmIdsArray)
+     
       const data = {
         name: e.target.name.value,
         species: e.target.species.value,
         planet_name: e.target.planetName.value,
-        avatar: e.target.avatar.value
+        avatar: e.target.avatar.value,
+        film_ids: filmIdsArray
       }
       fetch(`${CHARACTERS_URL}`, {
         method: 'POST',
