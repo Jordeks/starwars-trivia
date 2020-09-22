@@ -1,7 +1,10 @@
 /* CHARACTER PLAN
   -refactor with adaptor pattern and class syntax
+  -handle catch error from fetch
+  -handle validation errors
   -On character's card planet will mouseover to a popup with planet info
-  - make an entirely neeew planet with accepts nested attributes for new
+  -edit a character has checkboxes for films
+  - make an entirely neeew planet with accepts nested attributes for new character
 
 */
 
@@ -79,7 +82,7 @@ addButton.addEventListener("click", () => {
       const checks = Array.from(e.target.querySelectorAll(".checks"))
       const checkedFilms = checks.filter( film => film.checked )
       let filmIdsArray = checkedFilms.map( film => parseInt(film.id))
-      console.log(filmIdsArray)
+      // console.log(filmIdsArray)
      
       const data = {
         name: e.target.name.value,

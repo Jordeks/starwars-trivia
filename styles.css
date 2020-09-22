@@ -270,3 +270,54 @@ body {
   text-align: center;
   border-radius: 5px; 
 }
+
+.film-card {
+  text-align: center;
+  border: grey solid 1px;
+  border-radius: 5px; 
+  padding: 1rem;
+  width: 19rem;
+  height: auto;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px gray;
+  background-color: rgb(34, 33, 33);
+  background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1070&q=80');
+}
+
+
+.film-title {
+  font-size: 25px; 
+  color: whitesmoke;
+  -webkit-text-stroke: .5px blue;
+}
+
+.release-date {
+  font-size: 20px;
+  -webkit-text-stroke: .25px blue;
+}
+
+.director {
+  font-size: 20px;
+}
+
+.film-poster {
+    justify-self: center;
+    height: 25rem;
+    width: 18rem;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+  }
+
+  .film-characters-ul {
+    font-size: 23px; 
+    color: whitesmoke;
+    text-align: left;
+    list-style: none;
+  }
+
+  .film-characters-li {
+    font-size: 20px; 
+    color: whitesmoke;
+    text-align: left;
+  }

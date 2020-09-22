@@ -27,5 +27,20 @@ function renderFilm(film){
 
 function addFilmDivContent(div, film){
   div.classList.add("film-card")
-  div.innerHTML = `<p>${film.title}</p>`
+  div.innerHTML = `
+  <img class="film-poster" src="${film.poster}" alt=${film.title}/>
+  <p class="film-title">Title: ${film.title}</p>
+  <p class="release-date">Release Date: ${film.release_date}</p>
+  <p class="director">Director: ${film.director}</p>`
+
+  const charactersUl = document.createElement("ul")
+  charactersUl.innerText = "Characters:"
+  charactersUl.className = "film-characters-ul"
+  film.characters.forEach( character => {
+    let li = document.createElement("li")
+    li.className = "film-characters-li"
+    li.innerText = character.name
+    charactersUl.appendChild(li)
+  })
+  div.append(charactersUl)
 }
