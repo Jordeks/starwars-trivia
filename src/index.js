@@ -4,8 +4,6 @@ const body = document.querySelector("body")
 const modal = document.querySelector("#myModal")
 const app = document.querySelector(".app")
 
-
-
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 

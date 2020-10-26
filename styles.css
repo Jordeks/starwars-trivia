@@ -321,3 +321,8 @@ body {
     color: whitesmoke;
     text-align: left;
   }
+
+  #falcon {
+    height: auto;
+    width: 35rem;
+  }

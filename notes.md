@@ -1,6 +1,8 @@
 -add validations
 -handle catch for fetch error
 -handle validation errors
+-random space travel button functionality 
+-planet show page with climate maybs music
 
 -Models and Pages to Implement
     -Films: has_many :characters through: :film_characters
